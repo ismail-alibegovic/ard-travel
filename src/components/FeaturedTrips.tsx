@@ -79,7 +79,7 @@ export function FeaturedTrips() {
   const thumb = Math.max(0.12, progress.size);
 
   return (
-    <section id="putovanja" className="relative overflow-hidden bg-white pb-20 pt-20 lg:pb-28 lg:pt-[104px]">
+    <section id="putovanja" className="relative overflow-hidden bg-white pb-16 pt-16 sm:pb-20 sm:pt-20 lg:pb-28 lg:pt-[104px]">
       <div aria-hidden className="bg-grid-soft pointer-events-none absolute inset-0" />
 
       <div className="relative mx-auto max-w-[1440px] px-5 sm:px-8 lg:px-20">
@@ -92,7 +92,7 @@ export function FeaturedTrips() {
 
         {/* Filteri */}
         <Reveal delay={0.08} className="mt-9 flex flex-col items-center gap-4">
-          <div className="no-scrollbar -mx-5 flex max-w-[calc(100%+40px)] gap-2 overflow-x-auto px-5 sm:mx-0 sm:max-w-full sm:flex-wrap sm:justify-center sm:px-0">
+          <div className="no-scrollbar -mx-5 flex max-w-[calc(100%+40px)] gap-2 overflow-x-auto px-5 [mask-image:linear-gradient(90deg,#000_85%,transparent)] sm:mx-0 sm:[mask-image:none] sm:max-w-full sm:flex-wrap sm:justify-center sm:px-0">
             {tabs.map((t) => {
               const on = filter === t.id;
               return (
@@ -159,7 +159,7 @@ export function FeaturedTrips() {
       </div>
 
       {/* Karusel */}
-      <div className="relative mt-12 lg:mt-14">
+      <div className="relative mt-9 sm:mt-12 lg:mt-14">
         <AnimatePresence mode="popLayout">
           {list.length === 0 ? (
             <motion.div
@@ -202,7 +202,7 @@ export function FeaturedTrips() {
 
       {/* Navigacija karusela */}
       {list.length > 0 && (
-        <div className="relative mx-auto mt-10 flex max-w-[684px] items-center gap-6 px-5 sm:gap-8">
+        <div className="relative mx-auto mt-6 flex max-w-[684px] items-center gap-5 px-5 sm:mt-10 sm:gap-8">
           <button
             type="button"
             onClick={() => scrollBy(-1)}

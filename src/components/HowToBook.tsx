@@ -77,7 +77,7 @@ export function HowToBook() {
       </Reveal>
 
       {/* Marquee */}
-      <div className="relative mt-6 overflow-hidden border-b border-line pb-8 lg:mt-8 lg:pb-[52px]" aria-hidden>
+      <div className="relative mt-4 overflow-hidden border-b border-line pb-7 lg:mt-8 lg:pb-[52px]" aria-hidden>
         <div className="animate-marquee flex w-max">
           {[0, 1].map((k) => (
             <ul key={k} className="flex shrink-0 items-center">
@@ -95,14 +95,14 @@ export function HowToBook() {
       </div>
 
       <div className="mx-auto grid max-w-[1440px] lg:grid-cols-3">
-        <div className="flex flex-col items-center justify-center border-b border-line px-6 py-14 text-center lg:row-span-2 lg:border-b-0 lg:border-r lg:py-0">
+        <div className="flex flex-col items-center justify-center border-b border-line px-6 py-12 text-center lg:row-span-2 lg:border-b-0 lg:border-r lg:py-0">
           <Reveal className="flex flex-col items-center">
-            <h3 className="text-[34px] font-medium tracking-[-0.035em] lg:text-[38px]">4 jednostavna koraka</h3>
+            <h3 className="text-[30px] font-medium tracking-[-0.035em] sm:text-[34px] lg:text-[38px]">4 jednostavna koraka</h3>
             <p className="mt-4 max-w-[400px] text-[16px] leading-[1.75] text-graphite">
               Rezervacija putovanja s ARD Travelom je jednostavna. Slijedite ova četiri koraka i osigurajte svoje mjesto
               na vrijeme.
             </p>
-            <div className="mt-12 flex flex-wrap justify-center gap-3">
+            <div className="mt-8 flex flex-wrap items-center justify-center gap-3 lg:mt-12">
               <PillArrowButton variant="outline" onClick={() => openInquiry()}>
                 Pošalji upit
               </PillArrowButton>
@@ -118,14 +118,22 @@ export function HowToBook() {
         {steps.map((s, i) => (
           <div
             key={s.n}
-            className={`border-b border-line px-6 py-10 sm:px-8 lg:px-8 lg:pb-[50px] lg:pt-[54px] ${
+            className={`border-b border-line px-5 py-7 sm:px-8 sm:py-10 lg:px-8 lg:pb-[50px] lg:pt-[54px] ${
               i % 2 === 0 ? "lg:border-r" : ""
             } ${i >= 2 ? "lg:border-b-0" : ""}`}
           >
             <Reveal delay={i * 0.06}>
-              <p className="text-[36px] font-medium tracking-[-0.04em] lg:text-[40px]">{s.n}</p>
-              <h4 className="mt-6 text-[22px] font-medium tracking-[-0.025em] lg:mt-9">{s.title}</h4>
-              <p className="mt-3 text-[16px] leading-[1.75] text-muted lg:max-w-[400px]">{s.text}</p>
+              <div className="flex items-baseline gap-4 lg:block">
+                <p className="w-12 shrink-0 text-[26px] sm:w-[72px] font-medium tracking-[-0.04em] sm:text-[36px] lg:w-auto lg:text-[40px]">
+                  {s.n}
+                </p>
+                <div className="min-w-0">
+                  <h4 className="text-[20px] font-medium tracking-[-0.025em] sm:text-[22px] lg:mt-9">{s.title}</h4>
+                  <p className="mt-2 text-[15px] leading-[1.7] text-muted sm:mt-3 sm:text-[16px] sm:leading-[1.75] lg:max-w-[400px]">
+                    {s.text}
+                  </p>
+                </div>
+              </div>
             </Reveal>
           </div>
         ))}

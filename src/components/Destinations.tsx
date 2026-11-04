@@ -33,7 +33,7 @@ export function Destinations() {
   const go = (n: number) => setI((n + destinations.length) % destinations.length);
 
   return (
-    <section id="destinacije" className="bg-white py-20 lg:py-[110px]">
+    <section id="destinacije" className="bg-white py-16 sm:py-20 lg:py-[110px]">
       <div className="mx-auto max-w-[1440px] px-5 sm:px-8 lg:px-20">
         <div className="grid gap-6 lg:grid-cols-[1fr_500px] lg:items-end">
           <Reveal>
@@ -50,9 +50,9 @@ export function Destinations() {
           </Reveal>
         </div>
 
-        <div className="mt-12 grid gap-8 lg:mt-11 lg:grid-cols-[318px_minmax(0,1fr)_342px] lg:gap-6">
+        <div className="mt-9 grid gap-10 sm:mt-12 lg:mt-11 lg:grid-cols-[318px_minmax(0,1fr)_342px] lg:gap-6">
           {/* Lijeva kolona */}
-          <Reveal className="flex flex-col justify-between gap-12 lg:pr-4">
+          <Reveal className="order-2 flex flex-col justify-between gap-9 sm:gap-12 lg:order-none lg:pr-4">
             <div>
               <h3 className="text-[19px] font-medium tracking-[-0.015em]">Polasci iz BiH</h3>
               <p className="mt-3 text-[15px] leading-[1.75] text-muted">
@@ -76,8 +76,8 @@ export function Destinations() {
           </Reveal>
 
           {/* Glavna kartica destinacije */}
-          <Reveal delay={0.05}>
-            <div className="relative h-[440px] overflow-hidden rounded-[20px] bg-night sm:h-[500px]">
+          <Reveal delay={0.05} className="order-1 lg:order-none">
+            <div className="relative h-[420px] overflow-hidden rounded-[20px] bg-night sm:h-[500px]">
               <AnimatePresence initial={false}>
                 <motion.div
                   key={d.country}
@@ -156,7 +156,7 @@ export function Destinations() {
           </Reveal>
 
           {/* Desna kolona – istaknuto iz ARD galerije */}
-          <Reveal delay={0.1} className="flex flex-col">
+          <Reveal delay={0.1} className="order-3 flex flex-col lg:order-none">
             <button
               type="button"
               onClick={() => openOffer(spotlight)}

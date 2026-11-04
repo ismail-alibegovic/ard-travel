@@ -61,7 +61,7 @@ export function Footer() {
 
         <div className="grid gap-12 pt-12 lg:grid-cols-[minmax(0,1fr)_minmax(0,1.25fr)] lg:pt-14">
           <div className="flex flex-col">
-            <Image src="/brand/ard-logo-color.png" alt="ARD Travel" width={501} height={174} className="h-[58px] w-auto self-start" />
+            <Image src="/brand/ard-logo-white.png" alt="ARD Travel" width={351} height={177} className="h-[56px] w-auto self-start lg:h-[62px]" />
             <p className="mt-7 max-w-[400px] text-[15px] leading-[1.7] text-white/65">
               Privatna turistička agencija iz Sarajeva: paket aranžmani, ljetovanja, novogodišnja putovanja, avio karte,
               hotelske rezervacije i ARD Ground service za vaše goste.
@@ -86,8 +86,8 @@ export function Footer() {
               ))}
             </nav>
 
-            <div className="mt-12 grid gap-10 sm:grid-cols-2 lg:mt-[72px]">
-              <div className="space-y-9">
+            <div className="mt-10 grid grid-cols-2 gap-x-5 gap-y-9 lg:mt-[72px]">
+              <div className="col-span-2 space-y-9 sm:col-span-1">
                 <div>
                   <h3 className="text-[15px] font-medium">Kontakt</h3>
                   <ul className="mt-4 space-y-2.5 text-[15px] text-white/65">
@@ -128,7 +128,7 @@ export function Footer() {
                   </a>
                 </div>
               </div>
-              <div className="space-y-9">
+              <div className="col-span-2 grid grid-cols-2 gap-5 sm:col-span-1 sm:block sm:space-y-9">
                 <div>
                   <h3 className="text-[15px] font-medium">Radno vrijeme</h3>
                   <ul className="mt-4 space-y-2.5 text-[15px] text-white/65">

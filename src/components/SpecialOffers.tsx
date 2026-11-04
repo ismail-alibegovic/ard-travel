@@ -91,7 +91,7 @@ export function SpecialOffers() {
   const { showCategory } = useUI();
 
   return (
-    <section id="ponude" className="relative overflow-hidden bg-night pb-20 pt-16 text-white lg:pb-[120px] lg:pt-[80px]">
+    <section id="ponude" className="relative overflow-hidden bg-night pb-[88px] pt-14 text-white lg:pb-[120px] lg:pt-[80px]">
       {/* Linije mreže iz reference */}
       <div aria-hidden className="pointer-events-none absolute inset-0 mx-auto max-w-[1440px]">
         <span className="absolute inset-x-0 top-[60px] h-px bg-white/10" />
