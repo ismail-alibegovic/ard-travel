@@ -108,7 +108,7 @@ export function SpecialOffers() {
           </h2>
         </Reveal>
 
-        <div className="mx-auto mt-14 grid max-w-[1280px] gap-6 md:grid-cols-3 lg:mt-[68px]">
+        <div className="mx-auto mt-12 grid max-w-[440px] gap-5 lg:mt-[68px] lg:max-w-[1280px] lg:grid-cols-3 lg:gap-6">
           {cards.map((c, i) => (
             <Reveal key={c.id} delay={i * 0.1}>
               <OfferShape card={c} highlighted={i === 1} onClick={() => showCategory(c.id)} />
@@ -138,7 +138,7 @@ function OfferShape({
       type="button"
       onClick={onClick}
       aria-label={`${card.title.join(" ")} – od ${card.price} KM. Prikaži ponude`}
-      className="group relative block aspect-[410/400] w-full text-left"
+      className="group @container relative block aspect-[410/400] w-full text-left"
     >
       <svg viewBox={`0 0 ${W} ${H}`} className="absolute inset-0 size-full overflow-visible" aria-hidden>
         <path
@@ -157,16 +157,16 @@ function OfferShape({
 
       {/* Cijena u praznom gornjem lijevom uglu (na tamnoj pozadini) */}
       <div className="absolute left-[4%] top-[5%] text-white">
-        <p className="text-[clamp(26px,2.4vw,34px)] font-medium leading-none tracking-[-0.03em]">
+        <p className="whitespace-nowrap text-[clamp(22px,8.3cqw,34px)] font-medium leading-none tracking-[-0.03em]">
           <span className="mr-1 text-[0.5em] font-normal text-white/70">od</span>
           {formatPrice(card.price)}
           <span className="ml-1 text-[0.5em]">KM</span>
         </p>
-        <p className="mt-1.5 text-[15px] text-white/90">{card.unit}</p>
+        <p className="mt-1.5 whitespace-nowrap text-[clamp(12px,3.7cqw,15px)] text-white/90">{card.unit}</p>
       </div>
 
       <p
-        className={`absolute right-[5%] top-[6%] w-[50%] text-[13px] leading-[1.75] sm:text-[14px] ${
+        className={`absolute right-[5%] top-[6%] w-[50%] text-[clamp(11.5px,3.4cqw,14px)] leading-[1.6] ${
           highlighted ? "text-graphite" : "text-white/75"
         }`}
       >
@@ -174,7 +174,7 @@ function OfferShape({
       </p>
 
       <p
-        className={`absolute bottom-[6%] left-[5%] text-[clamp(26px,2.3vw,34px)] font-normal leading-[1.2] tracking-[-0.025em] ${ink}`}
+        className={`absolute bottom-[6%] left-[5%] text-[clamp(20px,7.6cqw,32px)] font-normal leading-[1.2] tracking-[-0.025em] ${ink}`}
       >
         {card.title[0]}
         <br />
@@ -182,8 +182,8 @@ function OfferShape({
       </p>
 
       <span className={`absolute bottom-[4%] right-[4%] flex flex-col items-end gap-1 ${ink}`}>
-        <ArrowRight className="size-9 stroke-[1.3] transition-transform duration-500 ease-out-soft group-hover:translate-x-1" />
-        <span className="text-[14px] font-medium">Pogledaj</span>
+        <ArrowRight className="size-[8cqw] stroke-[1.3] transition-transform duration-500 ease-out-soft group-hover:translate-x-1" />
+        <span className="text-[clamp(11px,3.3cqw,14px)] font-medium">Pogledaj</span>
       </span>
     </button>
   );

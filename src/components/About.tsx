@@ -61,7 +61,7 @@ export function About() {
             ))}
           </ul>
 
-          <dl className="mt-10 grid grid-cols-2 gap-6 text-[15px]">
+          <dl className="mt-10 grid gap-6 text-[15px] sm:grid-cols-2">
             <div>
               <dt className="text-soft">Poslovnica</dt>
               <dd className="mt-1.5 leading-[1.6] text-ink">

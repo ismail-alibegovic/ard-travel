@@ -129,8 +129,8 @@ export function FeaturedTrips() {
                 type="search"
                 value={query}
                 onChange={(e) => setQuery(e.target.value)}
-                placeholder="Pretražite destinaciju, grad ili zemlju…"
-                className="h-full w-full bg-transparent text-[15px] outline-none placeholder:text-soft [&::-webkit-search-cancel-button]:hidden"
+                placeholder="Pretražite destinaciju…"
+                className="h-full w-full min-w-0 bg-transparent text-[16px] outline-none sm:text-[15px] placeholder:text-soft [&::-webkit-search-cancel-button]:hidden"
               />
               {query && (
                 <button type="button" onClick={() => setQuery("")} aria-label="Obriši pretragu" className="text-soft hover:text-ink">
@@ -282,20 +282,21 @@ function TripCard({ offer: o, index, onOpen }: { offer: Offer; index: number; on
           </div>
         </div>
         <div className="flex items-start justify-between gap-3 px-2 pt-4">
-          <div className="min-w-0">
-            <h3 className="truncate text-[18px] font-medium tracking-[-0.015em]">{o.title}</h3>
+          <div className="min-w-0 flex-1">
+            <h3 className="line-clamp-2 text-[17px] font-medium leading-[1.3] tracking-[-0.015em] sm:text-[18px]">
+              {o.title}
+            </h3>
             <p className="mt-1.5 text-[14px] text-muted">{o.dateLabel}</p>
-            <p className="mt-0.5 flex items-center gap-1.5 text-[14px] text-muted">
-              {o.days && <span>{o.days} dana ·</span>}
-              <span>{o.hotel}</span>
+            <ul className="mt-2 flex flex-wrap gap-1.5 text-[12px] font-medium text-graphite">
+              {o.days && <li className="rounded-full bg-pill px-2.5 py-1">{o.days} dana</li>}
+              <li className="rounded-full bg-pill px-2.5 py-1">{o.hotel}</li>
               {o.transport && (
-                <>
-                  <span>·</span>
+                <li className="inline-flex items-center gap-1 rounded-full bg-pill px-2.5 py-1">
                   <TransportIcon transport={o.transport} className="size-3.5" />
-                  <span>{o.transport === "Avion" ? "Avion" : "Autobus"}</span>
-                </>
+                  {o.transport === "Avion" ? "Avion" : "Autobus"}
+                </li>
               )}
-            </p>
+            </ul>
           </div>
           <span className="grid size-11 shrink-0 place-items-center rounded-full border border-ink/15 transition-all duration-500 ease-out-soft group-hover:rotate-45 group-hover:border-ink group-hover:bg-ink group-hover:text-white">
             <ArrowUpRight className="size-[18px]" />

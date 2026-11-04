@@ -36,7 +36,7 @@ export function Footer() {
               e.preventDefault();
               openInquiry({ email });
             }}
-            className="flex h-[60px] w-full items-center rounded-full border border-white/25 bg-white/[0.08] p-1.5 pl-6 lg:w-[420px]"
+            className="flex w-full flex-col gap-2 sm:h-[60px] sm:flex-row sm:items-center sm:gap-0 sm:rounded-full sm:border sm:border-white/25 sm:bg-white/[0.08] sm:p-1.5 sm:pl-6 lg:w-[440px]"
           >
             <label htmlFor="footer-email" className="sr-only">
               Vaša e-mail adresa
@@ -47,11 +47,12 @@ export function Footer() {
               value={email}
               onChange={(e) => setEmail(e.target.value)}
               placeholder="Vaša e-mail adresa"
-              className="h-full min-w-0 flex-1 bg-transparent text-[16px] outline-none placeholder:text-white/45"
+              autoComplete="email"
+              className="h-14 w-full min-w-0 shrink-0 rounded-full border border-white/25 bg-white/[0.08] px-5 text-[16px] outline-none placeholder:text-white/45 sm:h-full sm:w-auto sm:flex-1 sm:rounded-none sm:border-0 sm:bg-transparent sm:px-0"
             />
             <button
               type="submit"
-              className="h-full shrink-0 rounded-full bg-white px-6 text-[15px] font-medium text-ink transition-colors hover:bg-white/85"
+              className="h-14 shrink-0 rounded-full bg-white px-6 text-[15px] font-medium text-ink transition-colors hover:bg-white/85 sm:h-full"
             >
               Pošalji upit
             </button>

@@ -19,11 +19,11 @@ const keywords = [
 export function PartnersStrip() {
   return (
     <section aria-label="Hoteli i prevoznici iz naše ponude" className="border-y border-line bg-white">
-      <div className="mx-auto flex max-w-[1440px] flex-col items-center gap-6 px-5 py-10 sm:px-8 lg:flex-row lg:justify-between lg:gap-10 lg:px-10 lg:py-[54px]">
-        <p className="shrink-0 text-[13px] font-medium uppercase tracking-[0.14em] text-soft lg:hidden">
+      <div className="mx-auto flex max-w-[1440px] flex-col items-center gap-6 px-5 py-10 sm:px-8 xl:flex-row xl:justify-between xl:gap-10 lg:px-10 lg:py-[54px]">
+        <p className="shrink-0 text-[13px] font-medium uppercase tracking-[0.14em] text-soft xl:hidden">
           Hoteli i prevoznici iz naše ponude
         </p>
-        <ul className="flex flex-wrap items-center justify-center gap-x-9 gap-y-4 lg:w-full lg:flex-nowrap lg:justify-between">
+        <ul className="flex flex-wrap items-center justify-center gap-x-9 gap-y-4 xl:w-full xl:flex-nowrap xl:justify-between">
           {partners.map((p, i) => (
             <li
               key={p}

@@ -80,7 +80,7 @@ export function Hero() {
           >
             Turistička agencija iz Sarajeva
           </motion.span>
-          <h1 className="mt-5 text-[44px] font-light leading-[0.98] tracking-[-0.045em] sm:text-[64px] lg:mt-6 lg:text-[clamp(64px,6.4vw,94px)]">
+          <h1 className="mt-5 text-[clamp(34px,11vw,44px)] font-light leading-[1] tracking-[-0.045em] sm:text-[64px] lg:mt-6 lg:text-[clamp(64px,6.4vw,94px)]">
             <motion.span
               className="block"
               initial={{ opacity: 0, y: 24 }}
