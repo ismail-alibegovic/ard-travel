@@ -1,0 +1,103 @@
+@import "tailwindcss";
+
+@theme {
+  --font-sans: var(--font-satoshi), ui-sans-serif, system-ui, sans-serif;
+
+  --color-ink: #141414;
+  --color-night: #1b1b1b;
+  --color-graphite: #3d3d3d;
+  --color-muted: #6e6e6e;
+  --color-soft: #9a9a9a;
+  --color-line: #e7e7e7;
+  --color-pill: #f1f1f1;
+  --color-paper: #ffffff;
+  --color-brand: #f47b20;
+  --color-brand-deep: #e0601a;
+
+  --ease-out-soft: cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+:root {
+  color-scheme: light;
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 96px;
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  background: var(--color-paper);
+  color: var(--color-ink);
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+}
+
+::selection {
+  background: var(--color-brand);
+  color: #fff;
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+  .no-scrollbar {
+    scrollbar-width: none;
+  }
+  .no-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+  /* Bijeli tekst koji se pri dnu gubi u fotografiji – kao u referenci */
+  .text-fade-white {
+    background: linear-gradient(180deg, #ffffff 30%, rgba(255, 255, 255, 0.55) 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+  }
+  .text-fade-dark {
+    background: linear-gradient(180deg, #ffffff 20%, rgba(255, 255, 255, 0.5) 110%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+  }
+  /* Suptilna perspektivna mreža iz reference */
+  .bg-grid-soft {
+    background-image:
+      linear-gradient(to right, rgba(20, 20, 20, 0.045) 1px, transparent 1px),
+      linear-gradient(to bottom, rgba(20, 20, 20, 0.045) 1px, transparent 1px);
+    background-size: 132px 132px;
+    mask-image: radial-gradient(ellipse 70% 60% at 50% 70%, #000 30%, transparent 75%);
+  }
+}
+
+@keyframes marquee {
+  from {
+    transform: translate3d(0, 0, 0);
+  }
+  to {
+    transform: translate3d(-50%, 0, 0);
+  }
+}
+
+.animate-marquee {
+  animation: marquee 38s linear infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  .animate-marquee {
+    animation: none;
+  }
+  *,
+  *::before,
+  *::after {
+    transition-duration: 0.01ms !important;
+    animation-duration: 0.01ms !important;
+  }
+}
